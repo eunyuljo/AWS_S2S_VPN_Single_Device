@@ -242,6 +242,18 @@ terraform destroy
 
 ---
 
+## 🧪 운영 시나리오 실습
+
+실제 운영에서 마주치는 **변경 시나리오**를 재현해볼 수 있는 하위 폴더들:
+
+| 시나리오 | 설명 |
+|----------|------|
+| [`scenarios/cgw-replacement/`](./scenarios/cgw-replacement/) | **온프레 VPN 장비 교체** — `ModifyVpnConnection`으로 VPN Connection의 CGW를 무중단에 가깝게 교체. 수동 CLI / 래퍼 스크립트 / Terraform 3가지 방식 제공 |
+
+각 시나리오는 부모 프로젝트가 `terraform apply`된 상태를 전제로 합니다.
+
+---
+
 ## 📚 참고 문서
 
 - [AWS Site-to-Site VPN User Guide](https://docs.aws.amazon.com/vpn/latest/s2svpn/)

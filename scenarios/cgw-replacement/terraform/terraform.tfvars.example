@@ -1,0 +1,22 @@
+# Copy to terraform.tfvars and fill with values from the parent project.
+#
+# In the parent project directory, run:
+#   terraform output
+# and copy the relevant fields here.
+
+aws_region   = "ap-northeast-2"
+project_name = "single-vpn"
+
+# Parent project outputs / discovered resources
+onprem_public_subnet_id       = "subnet-xxxxxxxxxxxxxxxxx"   # onprem public subnet AZ-a
+onprem_vpn_sg_id              = "sg-xxxxxxxxxxxxxxxxx"       # single-vpn-onprem-vpn SG
+ssm_instance_profile_name     = "single-vpn-ssm-profile"
+
+old_vpn_connection_id         = "vpn-xxxxxxxxxxxxxxxxx"
+old_customer_gateway_id       = "cgw-xxxxxxxxxxxxxxxxx"
+onprem_private_route_table_id = "rtb-xxxxxxxxxxxxxxxxx"
+old_vpn_eni_id                = "eni-xxxxxxxxxxxxxxxxx"      # the parent's old VPN device ENI
+
+# Must match the parent's onprem_bgp_asn (default 65000)
+onprem_bgp_asn    = 65000
+vpn_instance_type = "t3.small"
