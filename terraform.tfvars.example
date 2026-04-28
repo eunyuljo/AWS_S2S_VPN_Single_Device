@@ -1,0 +1,30 @@
+# AWS Region
+aws_region = "ap-northeast-2"
+
+# Project naming
+project_name = "single-vpn"
+
+# Common tags
+common_tags = {
+  Environment = "dev"
+  Owner       = "your-team"
+}
+
+# AWS VPC
+vpc_cidr             = "10.0.0.0/16"
+private_subnet_cidrs = ["10.0.1.0/24", "10.0.2.0/24"]
+public_subnet_cidrs  = ["10.0.101.0/24", "10.0.102.0/24"]
+
+# On-premise VPC (single device)
+onprem_vpc_cidr           = "192.168.0.0/16"
+onprem_public_subnet_cidr = "192.168.101.0/24"
+onprem_private_cidr       = "192.168.1.0/24"
+
+# BGP
+onprem_bgp_asn = 65000
+
+vpn_instance_type = "t3.small"
+
+# SSH key (OPTIONAL — SSM Session Manager is the primary access method).
+# Leave empty "" for SSM-only access (most secure).
+key_pair_name = ""
